@@ -1,0 +1,74 @@
+﻿
+%form__label {
+    position: relative;
+
+    // label side checkbox/radio
+    &--radiocheck {
+        @extend %align-middle;            
+
+        &:before {
+            content: '';
+            background: #fff;
+            border: 1px solid #dbdbdb;
+            width: 15px;
+            height: 15px;
+            padding: 2px;
+            margin-right: 10px;
+            text-align: center;
+            @extend %align-middle;
+
+            @include when-inside('*[class*="__checkbox"]', ':checked +') {
+                background: #000;
+                box-shadow: inset 0px 0px 0px 4px #fff;
+            }
+           
+            @include when-inside('*[class*="__radio"]', ':checked +') {
+                background: #000;
+                box-shadow: inset 0px 0px 0px 4px #fff;
+            }
+            @include when-inside('*[class*="__radio"]', ' +') {
+                border-radius: 50%;
+            }
+        }
+    }
+}
+    
+%form__input {
+    padding: 0.7rem;
+    border: 1px solid #dbdbdb;
+    @extend %size-small;
+}
+
+%form__select {
+    padding: 0.8rem;
+    border-radius: 0;
+    cursor: pointer;
+    appearance: none;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDIwMS40NTggMjAxLjQ1NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAxLjQ1OCAyMDEuNDU3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTE5My4xNzcsNDYuMjMzbDguMjgsOC4yOEwxMDAuNzM0LDE1NS4yNDFMMCw1NC40OTVsOC4yOC04LjI3OWw5Mi40Niw5Mi40NkwxOTMuMTc3LDQ2LjIzM3oiIGZpbGw9IiNjOWM5YzkiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    background-position: calc(100% - 15px) 50%;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    @extend %size-small;
+}
+    
+%form__checkbox {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    @extend %align-middle;
+}
+
+%form__radio {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    @extend %align-middle;
+}
+
+%form__textarea {
+    padding: 0.7rem;
+    border: 1px solid #dbdbdb;
+    @extend %size-small;
+}

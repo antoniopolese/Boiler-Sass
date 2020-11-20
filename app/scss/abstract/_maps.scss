@@ -1,0 +1,112 @@
+
+// ----------------------------------------------------------------------
+// Layout Breakpoints
+// ----------------------------------------------------------------------
+
+$breakpoints: ( 
+    'xs': 20em,   // 320px
+    'sm': 35.5em, // 568px
+    'md': 40em,   // 640px
+    'lg': 60em,   // 960px
+    'xl': 80em    // 1280px
+);
+
+
+// ----------------------------------------------------------------------
+// Font-family Value
+// ----------------------------------------------------------------------
+
+$font-family: ( 
+    'raleway': (
+        'regular': (
+            'font-family': $font-base,
+            'font-weight': 400,   
+        ),
+        'semibold': (
+            'font-family': $font-base,
+            'font-weight': 600,  
+        ),
+        'bold': (
+            'font-family': $font-base,
+            'font-weight': 700,  
+        ),
+        'extra-bold': (
+            'font-family': $font-base,
+            'font-weight': 800,  
+        ),
+    ),
+);
+
+
+// ----------------------------------------------------------------------
+// Typography Settings
+// ----------------------------------------------------------------------
+
+$typeSetting: (
+    'xsmall': (
+        'xs': (
+          'font-size': 0.9rem,
+        ),
+        'md': (
+          'font-size': 1rem,
+        ),
+        'lg': (
+          'font-size': 1.1rem,
+        ),
+    ),
+    'small': (
+        'xs': (
+          'font-size': 1.1rem,
+        ),
+        'md': (
+          'font-size': 1.2rem,
+        ),
+        'lg': (
+          'font-size': 1.3rem,
+        ),
+    ),
+    'medium': (
+        'xs': (
+          'font-size': 1.3rem,
+        ),
+        'md': (
+          'font-size': 1.4rem,
+        ),
+        'lg': (
+          'font-size': 1.5rem,
+        ),
+    ),
+    'large': (
+        'xs': (
+          'font-size': 1.5rem
+        ),
+        'md': (
+          'font-size': 1.6rem,
+        ),
+        'lg': (
+          'font-size': 1.7rem,
+        ),
+    ),
+    'xlarge': (
+        'xs': (
+            'font-size': 1.9rem
+        ),
+        'md': (
+            'font-size': 2.1rem,
+        ),
+        'lg': (
+            'font-size': 2.3rem,
+        ),
+    ),
+    'big': (
+        'xs': (
+          'font-size': 2.5rem,
+        ),
+        'md': (
+          'font-size': 2.7rem,
+        ),
+        'lg': (
+          'font-size': 2.9rem,
+        ),
+    ),
+);

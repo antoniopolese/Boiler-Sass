@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button of the site/application.
+// -----------------------------------------------------------------------------
+
+.#{$btn-name} {
+  // Default styles
+  padding: .5em;
+  color: #fff;
+  transition: background .15s;
+  border-radius: .15em;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .25);
+  border: if($btn-border, 1px solid, none);
+
+  // Modifiers
+  &--large {
+    font-size: 1em * $btn-size-ratio;
+  }
+
+  &--small {
+    font-size: 1em / $btn-size-ratio;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--upper {
+    text-transform: uppercase;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  // Color schemes
+  @each $key, $value in $btn-background {
+    &--#{$key} {
+      @include button-color($value);
+    }
+  }
+}

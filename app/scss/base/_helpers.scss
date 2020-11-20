@@ -1,0 +1,41 @@
+
+.u-pull-right {
+  float: right;
+}
+
+.u-pull-left {
+  float: left;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show, .block {
+  display: block !important;
+}
+
+.show-inline {
+  display: inline-block !important;
+}
+
+.noscroll {
+  overflow: hidden !important;
+  position: fixed !important;
+}
+
+.noborder {
+  border-width: 0 !important;
+}
+
+.text-truncate {
+@include text-truncate();
+}
+
+/*
+#### Fonte
+[https://github.com/ryanburgess/SASS-Useful-Mixins/blob/master/mixins/_clearfix.scss](https://github.com/ryanburgess/SASS-Useful-Mixins/blob/master/mixins/_clearfix.scss).
+*/
+.clearfix {
+@include clearfix();
+}

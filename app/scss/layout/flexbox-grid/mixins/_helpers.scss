@@ -1,0 +1,115 @@
+@mixin grid-row-alignment-horizontal($alignment) {
+    $justify: inherit;
+
+    @if ($alignment == center) {
+        $justify: center;
+    }
+    @elseif ($alignment == end) {
+        $justify: flex-end;
+    }
+    @elseif ($alignment == start) {
+        $justify: flex-start;
+    }
+
+    justify-content: $justify;
+    text-align: $alignment;
+}
+
+// Helper for the grid align top
+@mixin make-row-helpers($breakpoint) {
+    .row--#{$breakpoint}-top {
+        align-items: flex-start;
+    }
+
+    .row--#{$breakpoint}-center {
+        align-items: center;
+    }
+
+    .row--#{$breakpoint}-bottom {
+        align-items: flex-end;
+    }
+
+    .start--#{$breakpoint} {
+        @include grid-row-alignment-horizontal(start);
+    }
+
+    .center--#{$breakpoint} {
+        @include grid-row-alignment-horizontal(center);
+    }
+
+    .end--#{$breakpoint} {
+        @include grid-row-alignment-horizontal(end);
+    }
+}
+
+// Helper for the sorting the first item
+@mixin make-col-helpers($breakpoint) {
+    .col--#{$breakpoint}-align-top {
+        align-self: flex-start;
+    }
+
+    .col--#{$breakpoint}-align-center {
+        align-self: center;
+    }
+
+    .col--#{$breakpoint}-align-bottom {
+        align-self: flex-end;
+    }
+
+    .col--#{$breakpoint}-first {
+        order: -1;
+    }
+
+    .col--#{$breakpoint}-last {
+        order: 1;
+    }
+
+    .col--#{$breakpoint}-reset {
+        order: 0;
+    }
+
+    .row--#{$breakpoint}-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .col--#{$breakpoint}-flex {
+        display: flex;
+    }
+
+    .col--#{$breakpoint}-no-gutters {
+        padding: 0;
+    }
+}
+
+@mixin make-text-helpers($breakpoint) {
+    .text--#{$breakpoint}-right {
+        text-align: right;
+    }
+
+    .text--#{$breakpoint}-left {
+        text-align: left;
+    }
+
+    .text--#{$breakpoint}-center {
+        text-align: center;
+    }
+}
+
+@mixin make-visible-helpers($breakpoint) {
+    .invisible--#{$breakpoint} {
+        display: none !important;
+        visibility: hidden;
+    }
+
+    .visible--#{$breakpoint} {
+        display: block !important;
+        visibility: visible;
+    }
+}
+
+@mixin make-helpers($breakpoint) {
+    @include make-row-helpers($breakpoint);
+    @include make-col-helpers($breakpoint);
+    @include make-text-helpers($breakpoint);
+    @include make-visible-helpers($breakpoint);
+}

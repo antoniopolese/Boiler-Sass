@@ -1,0 +1,54 @@
+.heading {
+  text-align: center;
+  margin-bottom: rem-calc(25);
+
+  @include breakpoint(md){
+    margin-bottom: rem-calc(65);
+  }
+
+  &__title {
+    position: relative;
+    color: $corn;
+    text-transform: capitalize;
+    text-shadow: 0px 1px 0px #000;
+    @extend %size-large;
+
+    &:before, &:after {
+      content:'';
+      width: rem-calc(72);
+      height: rem-calc(1);
+      background-color: $white;
+      @include centerer($horizontal:true, $vertical:false);
+    }
+    &:before {
+      bottom: rem-calc(-26);
+    }
+    &:after {
+      bottom: rem-calc(-29);
+    }
+
+    span {
+      display: block;
+      color: $white;
+      margin-top: rem-calc(18);
+      @extend %size-big;
+    }
+  }
+
+  &__desc {
+    margin: 2.5rem auto 0;
+    line-height: rem-calc(23);
+    color: $white;
+    padding: 5%;
+    @extend %size-large;
+
+    @include breakpoint(md){
+      padding: 0 20%;
+      margin: 5.5rem auto 0;
+    }
+
+    @include breakpoint(xl){
+      padding: 0 30%;
+    }
+  }
+}

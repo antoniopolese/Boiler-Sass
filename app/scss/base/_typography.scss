@@ -1,0 +1,55 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  @extend %raleway-regular;
+  @extend %size-medium;
+}
+
+ins {
+  text-decoration: none;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.hidden-text {
+  @include replace-text();
+}
+
+
+// generate extend font-size
+@each $macro, $macroMap in $typeSetting {
+  .size-#{$macro},
+  %size-#{$macro} {
+      @each $prop, $val in $macroMap {
+          @if($prop) == 'xs' {
+              @each $prop1, $val1 in $val {
+                  #{$prop1}: #{$val1};
+                  letter-spacing: $val1 / 10; 
+              }
+          }
+          @else {
+              @media screen and (min-width: map-get($breakpoints, $prop)) {
+                  @each $prop1, $val1 in $val {
+                      #{$prop1}: #{$val1};
+                      letter-spacing: $val1 / 10; 
+                  }
+              }
+          }
+      }
+  }
+}
+
+// generate extend font-family
+@each $macro, $macroMap in $font-family {
+@each $prop, $val in $macroMap {
+  %#{$macro}-#{$prop} {
+    @each $prop1, $val1 in $val {
+        #{$prop1}: #{$val1};
+    }
+  }
+}
+}

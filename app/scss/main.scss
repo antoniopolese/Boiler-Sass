@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// Structure pattern 7-1 (https://sass-guidelin.es/it/#il-pattern-7-1)
+// -----------------------------------------------------------------------------
+
+
+// ABSTRACT
+@import 'abstract/variables';
+@import 'abstract/mixins';
+@import 'abstract/maps';
+@import 'abstract/function';
+@import 'abstract/placeholder/note';
+
+// VENDORS
+@import 'vendors/reset';
+
+// VENDORS EXTENSIONS
+
+
+// BASE
+@import 'base/base';
+@import 'base/typography';
+@import 'base/helpers';
+
+// LAYOUT
+@import 'layout/flexbox-grid/flexbox-grid';
+
+// COMPONENTS
+@import 'components/heading';
+@import 'components/clients';
+
+// PAGES
+
+
+// THEMES
+
+
+// SHAME FILE
+@import 'shame';

@@ -1,0 +1,46 @@
+﻿// -----------------------------------------
+// Arrows
+// -----------------------------------------
+
+@mixin arrows {
+	content: '';
+	border: 1px solid transparent;
+	width: 8px;
+	height: 8px;
+	margin-top: -4px;
+
+
+	@include centerer(false, true);
+	@include transform(rotate(-45deg));
+}
+
+@mixin carousel-arrows {
+	@include arrows;
+	width: 20px;
+	height: 20px;
+	margin-bottom: -10px;	
+}
+
+@mixin arrow-prev {
+	border-right: none;
+	border-bottom: none;
+	margin-top: -4px;
+}
+
+@mixin arrow-next {
+	border-top: none;
+	border-left: none;
+	margin-top: -4px;
+}
+
+@mixin arrow-down {
+	@include arrow-next;
+	@include transform(rotate(45deg));
+	margin-top: -5px;
+}
+
+@mixin arrow-up {
+	@include arrow-next;
+	@include transform(rotate(-135deg));
+	margin-top: -2px;
+}

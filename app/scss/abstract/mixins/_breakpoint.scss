@@ -1,0 +1,22 @@
+// ----------------------------------------------------------------------
+
+// Media Query Breakpoints
+
+// ----------------------------------------------------------------------
+
+// example @include breakpoint(940) { width:80%; }
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+/* Mixin that will print out the breakpoint names
+ * -------------------- */
+@mixin define-breakpoint($name) {
+    &:after {
+        content: "#{$name}";
+        display: none;
+    }
+}

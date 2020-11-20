@@ -1,0 +1,136 @@
+/*
+Import Mixin by Ryan Brugess
+[https://github.com/ryanburgess/SASS-Useful-Mixins](https://github.com/ryanburgess/SASS-Useful-Mixins).
+*/
+
+
+// -----------------------------------------
+// Animation
+// -----------------------------------------
+
+@import "mixins/animations";
+@import "mixins/keyframes";
+@import "mixins/transform";
+@import "mixins/transitions";
+
+
+// -----------------------------------------
+// Functional
+// -----------------------------------------
+
+@import "mixins/hover-focus";
+@import "mixins/replace-text";
+
+
+// -----------------------------------------
+// Layout
+// -----------------------------------------
+
+@import "mixins/clearfix";
+@import "mixins/position";
+
+
+// -----------------------------------------
+// Media Queries
+// -----------------------------------------
+
+@import "mixins/breakpoint";
+@import "mixins/min-breakpoint";
+
+
+// -----------------------------------------
+// Styles
+// -----------------------------------------
+
+@import "mixins/triangles";
+@import "mixins/truncate";
+@import "mixins/arrows";
+
+
+// -----------------------------------------
+// Values
+// -----------------------------------------
+
+@import "mixins/rem";
+
+
+// -----------------------------------------
+// Centering
+// -----------------------------------------
+
+@mixin centerer($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if ($vertical) {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+
+// -----------------------------------------
+// Buttons
+// -----------------------------------------
+
+@mixin button-color($color) {
+	background-color: $color;
+
+	&:hover,
+	&:active {
+		background: rgba(0,0,0, .1);
+	}
+
+	/*@if $btn-border != false {
+		border-width: 1px;
+		border-style: solid;
+		border-color: call(nth($btn-border, 1), $color, nth($btn-border, 2));
+	}*/
+
+}
+
+
+// -----------------------------------------
+// Icon
+// -----------------------------------------
+
+@mixin icon-size($size) {
+    width: $size+px;
+    height: $size+px;
+    line-height: $size+px;
+}
+
+
+// -----------------------------------------
+// Vertical Align
+// -----------------------------------------
+
+@mixin vertical-align() {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: inherit;
+    vertical-align: middle;
+  }
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+
+// BEM context (https://robots.thoughtbot.com/keeping-the-frontend-modular-with-bem)
+// the first argument refers to the root of the various components
+// the second argument is optional and is used to concatenate any modifiers or elements of the main one
+
+@mixin when-inside($selector, $child-selector:'') {
+    #{$selector + $child-selector} & {
+        @content;
+    }
+}

@@ -1,0 +1,25 @@
+
+%note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+
+    @include breakpoint(md){
+        flex-direction: initial;      
+    }
+}
+
+%note__image {
+    box-shadow: 0px 0px 0px 5px $white;
+}
+
+%note__info {
+    position: relative;
+    text-align: center;
+    background-color: $white;
+}
+
+%note__job {
+    display: block;
+}

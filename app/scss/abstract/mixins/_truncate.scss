@@ -1,0 +1,20 @@
+﻿// ----------------------------------------------------------------------
+
+// Truncate Text
+
+// ----------------------------------------------------------------------
+
+// example: @include text-truncate();
+
+@mixin text-truncate($gap: null) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @if($gap) {
+        width: calc(100% - #{$gap});
+    }
+    @else {
+        width: 100%;
+    }
+}

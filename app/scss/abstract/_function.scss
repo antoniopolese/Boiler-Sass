@@ -1,0 +1,50 @@
+
+// Key value Map (es. font-family: map-deep-get($family, secondary);)
+
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return #{$value}
+}
+
+
+// Pattern Rem Converter
+
+@function remove-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function unit-calc($values, $base-value, $unit) {
+  @if length($values) == 1 {
+    @if $unit != 1px {
+      @return remove-unit($values) / remove-unit($base-value) * $unit;
+    } @else {
+      @return remove-unit($values) * remove-unit($base-value) * $unit;
+    }
+  } @else {
+    
+    $unit-values: ();
+
+    @each $value in $values {
+      @if $unit != 1px {
+        $unit-values: append(
+          $unit-values,
+          remove-unit($value) / remove-unit($base-value) * $unit
+        );
+      } @else {
+        $unit-values: append(
+          $unit-values,
+          remove-unit($value) * remove-unit($base-value) * $unit
+        );
+      }
+    }
+
+    @return $unit-values;
+  }
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+  @return unit-calc($values, $base-value, 1rem);
+}

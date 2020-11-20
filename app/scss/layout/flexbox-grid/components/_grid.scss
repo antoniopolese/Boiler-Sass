@@ -1,0 +1,21 @@
+.grid {
+    box-sizing: border-box;
+    //padding: 0 .5rem;
+    padding: 0 1.5rem;
+
+    @include variant(container) {
+        margin: 0 auto;
+        max-width: $maxWidth;
+        width: 100%;
+    }
+
+    @include variant(no-gutters) {
+        padding: 0;
+    }
+
+    @include variant(medium) {
+        @include breakpoint(lg) {
+             padding: rem-calc(0 35);
+        }
+    }
+}

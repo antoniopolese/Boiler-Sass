@@ -1,0 +1,23 @@
+/*doc
+--- 
+    title: flexbox-grid | flexbox grid stylus
+    category: Layout 
+---
+Flexbox grid esterna [Peter van Meijgaard]
+
+#### Fonte
+Vedi [https://github.com/vivid-web/flexbox-grid-stylus](https://github.com/vivid-web/flexbox-grid-stylus).
+*/
+
+// Mixins
+@import "mixins/helpers";
+@import "mixins/grid-framework";
+@import "mixins/bem";
+
+// Components
+@import "components/col";
+@import "components/grid";
+@import "components/row";
+@import "components/text";
+
+@include init($breakpoints, $grid-columns);
