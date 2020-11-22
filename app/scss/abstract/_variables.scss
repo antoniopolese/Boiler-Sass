@@ -4,7 +4,7 @@ $white:     #fff;
 $grey:      #9e9e9e;
 
 // Typography
-$font-base: 'Lobster Two', cursive !default;
+$font-base: Roboto, sans-serif !default;
 
 // Project Colors
 $primary-color: #000;
@@ -15,3 +15,6 @@ $rem-base: 10px !default;
 // Grid
 $maxWidth: 1440px;
 $grid-columns: 12 !default;
+
+// Base Button Name
+$btn-name : btn

@@ -10,8 +10,10 @@
 @import 'abstract/function';
 @import 'abstract/placeholder/note';
 
+
 // VENDORS
 @import 'vendors/reset';
+
 
 // VENDORS EXTENSIONS
 
@@ -21,14 +23,18 @@
 @import 'base/typography';
 @import 'base/helpers';
 
+
 // LAYOUT
 @import 'layout/flexbox-grid/flexbox-grid';
 
+
 // COMPONENTS
-@import 'components/heading';
-@import 'components/clients';
+//@import 'components/button';
+@import 'components/objects/Slice';
+
 
 // PAGES
+
 
 
 // THEMES
